@@ -17,5 +17,4 @@ public interface RemoteConfig extends Config {
     String build();
     String osVersion();
     String device();
-
 }
