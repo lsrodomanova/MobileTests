@@ -25,7 +25,7 @@ public class WikiTests extends TestBase {
 
     @Test
     void openTest() {
-        //back();
+        back();
         step("Type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Tesla");
