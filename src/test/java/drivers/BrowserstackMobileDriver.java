@@ -14,9 +14,6 @@ import java.net.URL;
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
     static RemoteConfig config = ConfigFactory.create(RemoteConfig.class);
-    static String userName = config.login();
-    static String password = config.key();
-    static String appBrowserstack = config.appURL();
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
