@@ -30,8 +30,8 @@ public class WikiTests extends TestBase{
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Cyprus");
         });
         step("Open article", () ->
-                $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click());
+                //$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click());
                 $$(AppiumBy.className("android.view.View"))
-                        .shouldHave(CollectionCondition.itemWithText("Cyprus"));
+                        .shouldHave(CollectionCondition.itemWithText("Cyprus")));
     }
 }
