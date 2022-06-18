@@ -1,5 +1,6 @@
 package lubl;
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -27,11 +28,12 @@ public class WikiTests extends TestBase{
         //back();
         step("Type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Tesla");
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Cyprus");
         });
         step("Open article", () ->
-                //$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click());
+                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                        .find(Condition.text("Cyprus")).click());
                 $$(AppiumBy.className("android.view.View"))
-                        .shouldHave(CollectionCondition.itemWithText("Tesla")));
+                        .shouldHave(CollectionCondition.itemWithText("Tesla"));
     }
 }
