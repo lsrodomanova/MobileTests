@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("android")
-public class WikiTests extends TestBase{
+public class WikiTests extends TestBase {
     /*@Test
     void searchTest() {
         back();
@@ -28,12 +28,12 @@ public class WikiTests extends TestBase{
         //back();
         step("Type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Cyprus");
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Tesla");
         });
-        step("Open article", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .find(Condition.text("Cyprus")).click());
-                $$(AppiumBy.className("android.view.View"))
-                        .shouldHave(CollectionCondition.itemWithText("Tesla"));
+        step("Open article", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click();
+            $(AppiumBy.className("android.view.View"))
+                    .shouldHave(Condition.text("Tesla"));
+        });
     }
 }
