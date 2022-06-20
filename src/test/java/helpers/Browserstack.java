@@ -11,9 +11,9 @@ import static java.lang.String.format;
 public class Browserstack {
 
     public static ExtractableResponse<Response> videoUrl(String sessionId) {
-        RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
-        String login = config.login();
-        String password = config.key();
+        RemoteConfig remoteConfig = ConfigFactory.create(RemoteConfig.class, System.getProperties());
+        String login = remoteConfig.login();
+        String password = remoteConfig.key();
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
