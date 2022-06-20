@@ -1,11 +1,14 @@
 package helpers;
 
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
+
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
-/*
+
 public class Browserstack {
 
-    public static String videoUrl(String sessionId) {
+    public static ExtractableResponse<Response> videoUrl(String sessionId) {
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
@@ -16,7 +19,7 @@ public class Browserstack {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .extract()
-                .path("automation_session.video_url");
+                .extract();
+                //.path("automation_session.video_url");
     }
-}*/
+}
