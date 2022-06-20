@@ -2,7 +2,7 @@ package helpers;
 
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
-
+/*
 public class Browserstack {
 
     public static String videoUrl(String sessionId) {
@@ -19,4 +19,4 @@ public class Browserstack {
                 .extract()
                 .path("automation_session.video_url");
     }
-}
+}*/
