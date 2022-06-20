@@ -11,13 +11,13 @@ import static java.lang.String.format;
 public class Browserstack {
 
     public static ExtractableResponse<Response> videoUrl(String sessionId) {
-        RemoteConfig remoteConfig = ConfigFactory.create(RemoteConfig.class, System.getProperties());
+        /*RemoteConfig remoteConfig = ConfigFactory.create(RemoteConfig.class, System.getProperties());
         String login = remoteConfig.login();
-        String password = remoteConfig.key();
+        String password = remoteConfig.key();*/
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
-                .auth().basic(login, password)
+                .auth().basic("lyubovrodomanova_URK3ks", "Bz4pYZGuug7n3stKgjwD")
                 .log().all()
                 .when()
                 .get(url)
