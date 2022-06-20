@@ -19,7 +19,7 @@ public class Browserstack {
                 .then()
                 .log().all()
                 //.statusCode(200)
-                .extract();
-                //.path("automation_session.video_url");
+                .extract()
+                .path("automation_session.video_url");
     }
 }
